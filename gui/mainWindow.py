@@ -21,13 +21,15 @@ class MainWindow:
         self.frame.pack(fill=tkinter.BOTH, side=tkinter.LEFT)
 
     def onclick(self):
+        self.text.delete('1.0',END)
         letters = self.camp_lletres.get()
         if len(letters) != 7:
             messagebox.showerror("Error","No hi ha prou lletres")
             return
-        if 
         p = Processor()
         sol = p.generate_solution(letters)
+        label = Label(self.frame,text="Paraules: "+str(len(sol)))
+        label.grid(row=2, column=1)
         for word in sol:
             self.text.insert(tkinter.INSERT, chars=word)
 

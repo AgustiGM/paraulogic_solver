@@ -6,8 +6,8 @@ class Processor:
         # Look for your absolute directory path
         absolute_path = os.path.dirname(os.path.abspath(__file__))
         # Or: file_path = os.path.join(absolute_path, 'folder', 'my_file.py')
-        self.data = open(absolute_path + '/data.txt', 'r')
-        self.abecedari = "abcdefghijklmnopqrstuvwxyzç123456789"
+        self.data = open(absolute_path + '/net.txt', 'r')
+        self.abecedari = "abcdefghijklmnopqrstuvwxyzç"
 
     def generate_solution(self, letters):
         no_interessa = [c in letters for c in self.abecedari]
