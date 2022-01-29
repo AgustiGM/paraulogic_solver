@@ -27,9 +27,13 @@ class MainWindow:
             messagebox.showerror("Error","No hi ha prou lletres")
             return
         p = Processor()
-        sol = p.generate_solution(letters)
-        label = Label(self.frame,text="Paraules: "+str(len(sol)))
+        sol, tutis = p.generate_solution(letters)
+        label = Label(self.frame,text="Paraules: "+str(len(sol)+len(tutis)))
         label.grid(row=2, column=1)
+        self.text.insert(tkinter.INSERT, chars="Tutis:\n")
+        for word in tutis:
+            self.text.insert(tkinter.INSERT, chars=word)
+        self.text.insert(tkinter.INSERT, chars="Resta:\n")
         for word in sol:
             self.text.insert(tkinter.INSERT, chars=word)
 
